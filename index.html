@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decoding Scale. How AI-native distributed organizations are built, scaled, and managed.</title>
+<meta name="description" content="The operator's weekly newsletter for founders and CEOs building distributed organizations in the AI era. By Tito Salas. Free.">
+<meta property="og:title" content="Decoding Scale. Build at the frontier.">
+<meta property="og:description" content="Every Thursday: how AI-native distributed organizations are built, scaled, and managed. Frameworks, not theory.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://decodingscale.com">
+<meta property="og:image" content="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/publication/logo/065a977d-13bf-4262-82eb-706423e129ab/decoding_scale_800x800.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Decoding Scale">
+<meta name="twitter:description" content="How AI-native distributed organizations are built, scaled, and managed.">
+<link rel="icon" type="image/png" href="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/publication/logo/065a977d-13bf-4262-82eb-706423e129ab/decoding_scale_800x800.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--night:#26215C;--indigo:#3C3489;--brand:#534AB7;--mid:#7F77DD;--light:#AFA9EC;--pale:#EEEDFE;--black:#0D0B1E;--ink:#1A1825;--bg:#F4F3F0;--white:#FFFFFF;--rule:#E4E2EC;--max-w:1100px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.6}
+nav.top{position:sticky;top:0;z-index:100;background:rgba(244,243,240,0.92);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--rule)}
+nav.top .inner{max-width:var(--max-w);margin:0 auto;padding:16px 32px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{display:flex;align-items:baseline;gap:6px;font-size:18px;font-weight:700;letter-spacing:-0.5px;text-decoration:none}
+.nav-logo .word-dark{color:var(--black)}
+.nav-logo .word-brand{color:var(--brand)}
+.nav-meta{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mid)}
+.hero{max-width:var(--max-w);margin:0 auto;padding:96px 32px 80px;text-align:left}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:32px}
+.hero-logo{line-height:0.9;margin-bottom:40px}
+.hero-logo .word{display:block;font-size:clamp(56px,11vw,128px);font-weight:700;letter-spacing:-3px}
+.hero-logo .word-dark{color:var(--black)}
+.hero-logo .word-brand{color:var(--brand)}
+.hero-tagline{font-size:clamp(20px,2.4vw,28px);font-weight:500;color:#444;max-width:640px;line-height:1.45;letter-spacing:-0.3px;margin-bottom:48px}
+.hero-tagline strong{color:var(--brand);font-weight:600}
+.subscribe-block{background:var(--white);border:1px solid var(--rule);border-radius:20px;padding:36px;max-width:600px;box-shadow:0 1px 0 rgba(83,74,183,0.04),0 24px 48px -24px rgba(38,33,92,0.12)}
+.subscribe-block .label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:16px}
+.subscribe-block .promise{font-size:16px;font-weight:500;color:var(--ink);margin-bottom:22px}
+.subscribe-form{display:flex;gap:10px;flex-wrap:wrap}
+.subscribe-form input[type="email"]{flex:1;min-width:200px;padding:14px 18px;font-family:inherit;font-size:16px;font-weight:500;color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:12px;outline:none;transition:border 0.15s ease,background 0.15s ease}
+.subscribe-form input[type="email"]:focus{border-color:var(--brand);background:var(--white)}
+.subscribe-form button{padding:14px 28px;font-family:inherit;font-size:15px;font-weight:700;letter-spacing:0.2px;color:var(--white);background:var(--brand);border:none;border-radius:12px;cursor:pointer;transition:background 0.15s ease,transform 0.05s ease}
+.subscribe-form button:hover{background:var(--indigo)}
+.subscribe-form button:active{transform:scale(0.98)}
+.subscribe-fineprint{font-size:12px;color:#888;margin-top:16px}
+.attrib{max-width:var(--max-w);margin:0 auto;padding:0 32px 64px;border-bottom:1px solid var(--rule)}
+.attrib-inner{display:flex;align-items:center;gap:16px;padding-top:24px;font-size:13px;color:#555;flex-wrap:wrap}
+.attrib-by{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mid)}
+.attrib-name{font-weight:600;color:var(--night)}
+.value{max-width:var(--max-w);margin:0 auto;padding:96px 32px}
+.section-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:24px}
+.section-title{font-size:clamp(28px,3.6vw,40px);font-weight:700;letter-spacing:-1px;color:var(--black);line-height:1.15;margin-bottom:16px;max-width:720px}
+.section-subtitle{font-size:17px;color:#555;line-height:1.65;margin-bottom:56px;max-width:600px}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.value-card{background:var(--white);border:1px solid var(--rule);border-radius:20px;padding:36px 32px;transition:transform 0.2s ease,border-color 0.2s ease}
+.value-card:hover{transform:translateY(-2px);border-color:var(--light)}
+.value-card .num{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--brand);margin-bottom:22px}
+.value-card .title{font-size:19px;font-weight:700;color:var(--black);margin-bottom:12px;letter-spacing:-0.3px}
+.value-card .body{font-size:14px;color:#555;line-height:1.7}
+.issue-band{background:var(--night);color:var(--white);padding:96px 0}
+.issue-inner{max-width:var(--max-w);margin:0 auto;padding:0 32px}
+.issue-band .section-label{color:var(--light)}
+.issue-band .section-title{color:var(--white)}
+.issue-band .section-subtitle{color:rgba(255,255,255,0.7)}
+.issue-card{background:rgba(255,255,255,0.04);border:1px solid rgba(175,169,236,0.18);border-radius:20px;padding:44px;display:grid;grid-template-columns:80px 1fr;gap:32px;align-items:center}
+.issue-num{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--light);border:1px solid rgba(175,169,236,0.3);border-radius:12px;padding:18px 12px;text-align:center;line-height:1.4}
+.issue-headline{font-size:clamp(20px,2.4vw,26px);font-weight:700;color:var(--white);letter-spacing:-0.4px;line-height:1.3;margin-bottom:10px}
+.issue-tease{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.65}
+.about{max-width:var(--max-w);margin:0 auto;padding:96px 32px}
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
+.about-quote{font-size:clamp(20px,2.4vw,26px);font-weight:600;color:var(--black);line-height:1.4;letter-spacing:-0.4px}
+.about-quote em{color:var(--brand);font-style:normal}
+.about-bio{font-size:16px;color:#444;line-height:1.75}
+.about-bio p{margin-bottom:16px}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px;padding-top:32px;border-top:1px solid var(--rule)}
+.stat-num{font-size:28px;font-weight:700;color:var(--brand);letter-spacing:-1px;line-height:1}
+.stat-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-top:8px}
+.final-cta{background:var(--brand);color:var(--white);padding:96px 0}
+.final-inner{max-width:760px;margin:0 auto;padding:0 32px;text-align:center}
+.final-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:22px}
+.final-headline{font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-1.2px;line-height:1.15;color:var(--white);margin-bottom:18px}
+.final-subhead{font-size:17px;color:rgba(255,255,255,0.85);line-height:1.65;margin-bottom:44px}
+.final-cta .subscribe-block{background:var(--white);margin:0 auto}
+footer.bottom{background:var(--black);color:rgba(255,255,255,0.6);padding:56px 32px 40px}
+.footer-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}
+.footer-logo{display:flex;align-items:baseline;gap:6px;margin-bottom:12px;font-size:18px;font-weight:700;letter-spacing:-0.5px}
+.footer-logo .word-light{color:var(--white)}
+.footer-logo .word-brand{color:var(--light)}
+.footer-mission{font-size:13px;max-width:420px;line-height:1.6}
+.footer-links{display:flex;gap:28px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.15s ease}
+.footer-links a:hover{color:var(--light)}
+.footer-copyright{grid-column:1 / -1;border-top:1px solid rgba(255,255,255,0.08);padding-top:28px;margin-top:32px;font-size:11px;color:rgba(255,255,255,0.4);display:flex;justify-content:space-between}
+@media (max-width:880px){.value-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:40px}.issue-card{grid-template-columns:1fr;padding:32px;gap:24px}.footer-inner{grid-template-columns:1fr;align-items:start}.hero{padding-top:64px}}
+@media (max-width:520px){nav.top .inner{padding:14px 20px}.hero,.value,.about{padding-left:20px;padding-right:20px}.issue-inner,.final-inner{padding-left:20px;padding-right:20px}.subscribe-block{padding:28px 24px}.about-stats{grid-template-columns:1fr;gap:20px}}
+.hp{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+</style>
+</head>
+<body>
+<nav class="top"><div class="inner"><a href="#top" class="nav-logo" aria-label="Decoding Scale home"><span class="word-dark">DECODING</span><span class="word-brand">SCALE</span></a><span class="nav-meta">Newsletter . Weekly . Free</span></div></nav>
+<section class="hero" id="top"><div class="hero-eyebrow">A weekly newsletter by Tito Salas</div><div class="hero-logo"><span class="word word-dark">DECODING</span><span class="word word-brand">SCALE</span></div><p class="hero-tagline">How <strong>AI-native distributed organizations</strong> are built, scaled, and managed. For founders and operators who build at the frontier.</p><div class="subscribe-block"><div class="label">Join the Decoding Scale operator list</div><div class="promise">One Decision Memo and paired framework every Thursday. Free, forever.</div><form class="subscribe-form" action="https://decoding-scale.beehiiv.com/subscribe" method="POST" target="_blank" novalidate><input type="text" name="hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="email" name="email" placeholder="your@work-email.com" required autocomplete="email" aria-label="Email address"><button type="submit">Subscribe free</button></form><div class="subscribe-fineprint">No spam. Unsubscribe anytime. Read by founders and operators at 20-500 employee companies.</div></div></section>
+<div class="attrib"><div class="attrib-inner"><span class="attrib-by">By</span><span class="attrib-name">Tito Salas</span><span>.</span><span>Founder, CodersLink</span><span>.</span><span>10 years scaling distributed engineering teams . 1000+ engineer placements . 150+ companies served</span></div></div>
+<section class="value"><div class="section-label">01 / What you get every Thursday</div><h2 class="section-title">Decision-grade frameworks. Not theory. Not hype.</h2><p class="section-subtitle">Every issue is shaped around one operational decision a scale-up leader faces this quarter, with the framework to make it.</p><div class="value-grid"><div class="value-card"><div class="num">01 / Decision Memo</div><div class="title">The non-obvious tradeoff</div><div class="body">Each issue opens with the specific decision most leaders mis-frame. What looks like a hiring problem is usually an org design problem. The Decision Memo names which one you are actually solving.</div></div><div class="value-card"><div class="num">02 / The Tool</div><div class="title">A paired framework you can use Monday</div><div class="body">Every Decision Memo ships with a downloadable artifact: checklist, decision tree, scorecard, or playbook. Operator tools, not management quotes. Built from real scale-up engagements.</div></div><div class="value-card"><div class="num">03 / Pattern and Anti-Pattern</div><div class="title">What works. What looks right but breaks.</div><div class="body">Tier 1 sources (Bain, McKinsey, BCG, Gartner) plus first-party CodersLink delivery data plus pattern observations across 150+ companies. Synthesis, not summary.</div></div></div></section>
+<section class="issue-band"><div class="issue-inner"><div class="section-label">02 / Launch week</div><h2 class="section-title">First issue ships this Thursday.</h2><p class="section-subtitle">You are early. Founders and operators on the list now will read every issue from the first one forward, plus the launch series of paired frameworks.</p><div class="issue-card"><div class="issue-num">Issue<br>01</div><div><div class="issue-headline">The AI velocity vs comprehension gap at 80 to 200 engineers</div><div class="issue-tease">Jellyfish 2026 says 48% of code is now AI-generated and 55% of engineering leaders are losing shared codebase understanding. Same problem, two angles. The opening Decision Memo unpacks the comprehension gate framework plus 4 metrics to instrument before the gap compounds.</div></div></div></div></section>
+<section class="about"><div class="section-label">03 / About</div><div class="about-grid"><div class="about-quote"><em>Operational reality outweighs narrative. Real customer conversations outweigh LinkedIn opinions. Pipeline economics outweigh engagement metrics.</em></div><div class="about-bio"><p>Tito Salas is the founder of CodersLink, a Mexico-specialized engineering capacity partner for U.S. companies. Ten years scaling distributed engineering teams. 1000-plus engineer placements. 150-plus companies served.</p><p>Decoding Scale is what Tito wishes he had received as a weekly memo five years ago: the operator view on building AI-native distributed organizations. Frameworks instead of opinions. Patterns instead of platitudes. Direct from inside scale-ups, not from outside them.</p><p>Written for founders, CEOs, VPEs, and Heads of Talent at 20 to 500 employee companies. Always free. Always operator-led.</p><div class="about-stats"><div><div class="stat-num">10 yrs</div><div class="stat-label">Scaling distributed teams</div></div><div><div class="stat-num">1000+</div><div class="stat-label">Engineer placements</div></div><div><div class="stat-num">150+</div><div class="stat-label">Companies served</div></div></div></div></div></section>
+<section class="final-cta"><div class="final-inner"><div class="final-eyebrow">Free. Operator-led. No filler.</div><h2 class="final-headline">Frameworks for founders who build in the AI era.</h2><p class="final-subhead">Every week, Decoding Scale breaks down how AI-native distributed organizations are built, scaled, and managed. Join operators at 20 to 500 employee companies who read it Thursday morning.</p><div class="subscribe-block"><div class="label">One click to join</div><div class="promise">One Decision Memo. Every Thursday. Always free.</div><form class="subscribe-form" action="https://decoding-scale.beehiiv.com/subscribe" method="POST" target="_blank" novalidate><input type="text" name="hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="email" name="email" placeholder="your@work-email.com" required autocomplete="email" aria-label="Email address"><button type="submit">Subscribe free</button></form><div class="subscribe-fineprint">Same email, every Thursday. Two clicks to unsubscribe if it is not for you.</div></div></div></section>
+<footer class="bottom"><div class="footer-inner"><div><div class="footer-logo"><span class="word-light">DECODING</span><span class="word-brand">SCALE</span></div><div class="footer-mission">How AI-native distributed organizations are built, scaled, and managed. Written by Tito Salas, founder of CodersLink.</div></div><div class="footer-links"><a href="https://decoding-scale.beehiiv.com" target="_blank" rel="noopener">Archive</a><a href="https://www.linkedin.com/in/jesussalascoderslink" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:tito@coderslink.com">Contact</a></div><div class="footer-copyright"><span>2026 Tito Salas. Decoding Scale.</span><span>Built on GitHub Pages.</span></div></div></footer>
+<script>document.querySelectorAll('form.subscribe-form').forEach(function(form){form.addEventListener('submit',function(e){var hp=form.querySelector('input[name="hp"]');if(hp&&hp.value){e.preventDefault();return}})});</script>
+</body>
+</html>
