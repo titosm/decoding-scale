@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4F3F0"/>
+      <stop offset="100%" stop-color="#EEEDFE"/>
+    </linearGradient>
+    <style>
+      .wordmark { font-family: 'Space Grotesk', 'Helvetica Neue', sans-serif; font-weight: 700; letter-spacing: -6px; }
+      .label { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+      .tagline { font-family: 'Space Grotesk', sans-serif; font-weight: 500; letter-spacing: -1px; }
+      .byline { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.5px; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <rect x="0" y="0" width="12" height="630" fill="#534AB7"/>
+
+  <text x="80" y="125" class="label" font-size="22" fill="#7F77DD">
+    A WEEKLY NEWSLETTER BY TITO SALAS
+  </text>
+
+  <text x="80" y="295" class="wordmark" font-size="180" fill="#0D0B1E">
+    DECODING
+  </text>
+  <text x="80" y="460" class="wordmark" font-size="180" fill="#534AB7">
+    SCALE
+  </text>
+
+  <text x="80" y="540" class="tagline" font-size="32" fill="#444444">
+    How AI-native distributed organizations are
+  </text>
+  <text x="80" y="582" class="tagline" font-size="32" fill="#444444">
+    built, scaled, and managed.
+  </text>
+
+  <rect x="1080" y="40" width="80" height="80" rx="14" fill="#534AB7"/>
+  <text x="1120" y="92" class="byline" font-size="36" fill="#FFFFFF" text-anchor="middle">DS</text>
+</svg>
