@@ -661,11 +661,9 @@
 
 <script>
   // Decoding Scale subscribe handler.
-  // Calls Beehiiv v2 API directly. Falls back to Beehiiv-hosted page if the API call fails.
-  // Key is publishable; if abused, rotate at app.beehiiv.com/settings/workspace/api.
-  var BEEHIIV_PUB_ID = "pub_065a977d-13bf-4262-82eb-706423e129ab";
-  var BEEHIIV_KEY = "Uh96TYqxcl0Zxb5JcRHJkuzIStklXaKWOu6b1De79Y4V6mskjYFh8hfkj6gPATGb";
-  var BEEHIIV_FALLBACK_URL = "https://decoding-scale.beehiiv.com/subscribe";
+  // Calls our Cloudflare Worker proxy which holds the Beehiiv key server-side.
+  // No API keys are stored client-side.
+  var WORKER_URL = "https://decoding-scale-subscribe.tito-5a3.workers.dev";
   var RATE_LIMIT_KEY = "ds_subscribe_attempts";
   var RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
   var RATE_LIMIT_MAX = 5;
@@ -729,19 +727,13 @@
     var utm = getUtm();
     var body = {
       email: email,
-      reactivate_existing: false,
-      send_welcome_email: true,
       utm_source: utm.utm_source,
       utm_medium: utm.utm_medium,
-      utm_campaign: utm.utm_campaign,
-      referring_site: utm.referring_site
+      utm_campaign: utm.utm_campaign
     };
-    return fetch("https://api.beehiiv.com/v2/publications/" + BEEHIIV_PUB_ID + "/subscriptions", {
+    return fetch(WORKER_URL, {
       method: "POST",
-      headers: {
-        "Authorization": "Bearer " + BEEHIIV_KEY,
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body)
     }).then(function(r){
       return r.json().then(function(j){ return { status: r.status, body: j }; }).catch(function(){ return { status: r.status, body: {} }; });
@@ -768,22 +760,19 @@
       setStatus(form, "Subscribing...", 'info');
       subscribe(email).then(function(res){
         lockButton(form, false);
-        var errMsg = (res.body && res.body.errors && res.body.errors[0] && res.body.errors[0].message) || '';
-        if (res.status === 201 || res.status === 200) {
+        if (res.status === 201 && res.body && res.body.status === 'subscribed') {
           setStatus(form, "You are on the list. Check your inbox for confirmation.", 'ok');
           if (emailEl) emailEl.value = '';
-        } else if (res.status === 409 || /already/i.test(errMsg)) {
+        } else if (res.status === 200 && res.body && res.body.status === 'already_subscribed') {
           setStatus(form, "You are already subscribed. See you Thursday.", 'ok');
+        } else if (res.status === 400 && res.body && res.body.error === 'invalid_email') {
+          setStatus(form, "That email does not look valid. Try again.", 'err');
         } else {
-          var fallback = BEEHIIV_FALLBACK_URL + "?email=" + encodeURIComponent(email);
-          setStatus(form, "Opening backup confirmation page...", 'info');
-          window.open(fallback, '_blank');
+          setStatus(form, "Something went wrong on our side. Please try again or email tito@coderslink.com.", 'err');
         }
       }).catch(function(){
         lockButton(form, false);
-        var fallback = BEEHIIV_FALLBACK_URL + "?email=" + encodeURIComponent(email);
-        setStatus(form, "Network issue. Opening backup page...", 'err');
-        window.open(fallback, '_blank');
+        setStatus(form, "Network issue. Please try again in a moment.", 'err');
       });
     });
   });
